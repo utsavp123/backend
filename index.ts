@@ -5,9 +5,9 @@ import { fileURLToPath } from 'url';
 
 import { Server as SocketIOServer } from 'socket.io';
 import cors from "cors";
-import { connection } from "./config/sequelize"; // Assuming this sets up Sequelize and connects to the database
-import userRoute from "./router/user.route"; // Assuming this is where your user route is defined
-import { SocketConnection } from "./controller/socket.controllet";
+import { connection } from "./src/config/sequelize"; // Assuming this sets up Sequelize and connects to the database
+import userRoute from "./src/router/user.route"; // Assuming this is where your user route is defined
+import { SocketConnection } from "./src/controller/socket.controllet";
 
 const app = express();
 const server = http.createServer(app);
