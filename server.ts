@@ -2,10 +2,10 @@ import dotenv from "dotenv";
 import express from "express";
 import fs from "fs";
 import morgan from "morgan";
-import path from "path";
+// import path from "path";
 import http from "http";
-// import path from 'path';
-// import { fileURLToPath } from 'url';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 import { Server as SocketIOServer } from 'socket.io';
 import cors from "cors";
@@ -17,16 +17,16 @@ const app = express();
 const server = http.createServer(app);
 const io = new SocketIOServer(server);
 dotenv.config();
-// const __filename: any = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename: any = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3030;
 // Socket.IO event handling
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 
 // Sequelize database connection
