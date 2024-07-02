@@ -13,7 +13,7 @@ import { Sequelize } from 'sequelize';
 // });
 
 const sequelize = new Sequelize('postgresql://admin:z7LzfJZM7JCxeRuGIx4mr2ojwFQJnJT7@dpg-cq1efbd6l47c73amdtg0-a.oregon-postgres.render.com/chat_app_ne77', {
-    logging: true, // Disable logging (optional)
+    // logging: true, // Disable logging (optional)
     dialectOptions: {
         ssl: {
             require: true, 

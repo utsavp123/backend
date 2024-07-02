@@ -1,5 +1,9 @@
+import dotenv from "dotenv";
 import express from "express";
-import http from 'http';
+import fs from "fs";
+import morgan from "morgan";
+import path from "path";
+import http from "http";
 // import path from 'path';
 // import { fileURLToPath } from 'url';
 
@@ -12,10 +16,10 @@ import { SocketConnection } from "./src/controller/socket.controllet";
 const app = express();
 const server = http.createServer(app);
 const io = new SocketIOServer(server);
-
+dotenv.config();
 // const __filename: any = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
-const port = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3030;
 // Socket.IO event handling
 // app.use(express.static(path.join(__dirname, 'public')));
 
@@ -42,7 +46,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/user', userRoute);
 
 // Start the server
-server.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
-
+server.listen(PORT, () => {
+    console.log(`server is runing ${PORT}`)
+})
