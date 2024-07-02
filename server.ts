@@ -24,9 +24,7 @@ const PORT = process.env.PORT || 3030;
 app.use(express.static(path.join(__dirname, 'src/public')));
 
 // Routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'src/public', 'index.html'));
-});
+
 
 
 // Sequelize database connection
@@ -44,7 +42,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use('/api/user', userRoute);
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/public', 'index.html'));
+});
 // Start the server
 server.listen(PORT, () => {
     console.log(`server is runing ${PORT}`)
