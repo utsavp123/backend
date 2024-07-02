@@ -4,11 +4,11 @@ import { Sequelize } from 'sequelize';
 
 // const sequelize = new Sequelize({
 //     dialect: 'postgres', // specify your database
-//     host: 'dpg-cq1efbd6l47c73amdtg0-a',    // specify your host
+//     host: 'localhost',    // specify your host
 //     port: 5432,
-//     username: 'admin',
-//     password: 'pSmgvVv5cda2oRDuFSaU9UMdIphTsNJo',
-//     database: 'chat_app_mke9',
+//     username: 'postgres',
+//     password: 'asdfghjkl',
+//     database: 'nexunity',
 
 // });
 
